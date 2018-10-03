@@ -1,0 +1,59 @@
+#main{
+	& header{
+	border-bottom: rem(1)solid #eaeaec;
+		
+		& .head-wrap{@include justify-content(space-between);
+		@include flexbox;
+		@include align-items(center);
+		& .head-wrap-lft{width: rem(477);background: $colorBlue;padding-left: rem(30);text-align: center;padding-top: rem(30);padding-bottom: rem(30);	position:$positionRelative;
+			& a{display: inline-block;width: rem(305);text-align: center;
+				& img{width:100%;}
+			}
+			&:before{
+			background: $colorBlue;position: $positionAbsolute;margin-left:rem(-10000);width: rem(10000);left:0;top:0;content:'';height: 100%;
+		}
+	}
+			& .head-wrap-rght{padding-top: rem(30);padding-bottom: rem(30);padding-right: rem(30);
+				& .form-group-main{position:$positionRelative;margin-right: rem(33);
+				& .form_control{width: rem(593);margin-right: 0;padding-right: rem(76);}
+					& button{
+						    position: $positionAbsolute;
+    right: rem(40);@include position-center;color: #20c4f4;font-size: rem(25);border: 0;background: transparent;padding: 0;
+					}
+				
+			}
+			}
+		}
+}
+
+	
+
+}
+
+.form_control {
+	color: $colorGrey;
+	font-size: rem(18);
+	font-weight: 300;
+	font-family: 'Proxima Nova Lt';
+	padding: 0 rem(28);
+	width: rem(230);
+	height: rem(57);
+	border: rem(1) solid #d1d1d1;
+	@include border-radius(rem(5));
+	margin-right: rem(9);
+	@include breakpoint(large){height: rem(37);font-size: rem(15);}
+	&:focus {
+		border-color: $colorBlue;
+	}
+}
+
+@include breakpoint(x-large) {
+	.container {
+		max-width: 1470px;
+	}
+}
+
+
+
+
+

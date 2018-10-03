@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="73.523px" height="73.523px" viewBox="0 0 73.523 73.523" enable-background="new 0 0 73.523 73.523" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" y="0" width="73.524" height="73.524"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<circle clip-path="url(#SVGID_2_)" fill="none" stroke="#00C0F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="36.761" cy="36.762" r="35.762"/>
+	
+		<polygon clip-path="url(#SVGID_2_)" fill="none" stroke="#00C0F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		36.762,49.594 22.284,57.206 25.049,41.084 13.336,29.666 29.523,27.314 36.762,12.646 44.001,27.314 60.188,29.666 48.475,41.084 
+		51.24,57.206 	"/>
+</g>
+</svg>

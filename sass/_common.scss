@@ -1,0 +1,630 @@
+/*--------------------------------------------
+Common
+--------------------------------------------*/
+
+header {
+	background: $bgWhite;
+	padding: rem(22) 0;
+	position: fixed;
+	width: 100%;
+	top:0;
+	z-index: 9;
+	@include box-shadow(0 0 rem(6) rem(-1) #000);
+	& .navbar {
+		padding: 0;
+		& .collapse {
+			@include justify-content(flex-end);
+		}
+	}
+	& ul {
+		& li {
+			margin-right: rem(37);
+			@include breakpoint(large){margin-right: rem(30);}
+			
+			& a.nav-link {
+				color: $colorGrey;
+				font-size: rem(18);
+				font-family: 'Proxima Nova Lt';
+				font-weight: 300;
+				padding: 0 !important;
+				text-transform: none;
+				position: $positionRelative;
+				@include breakpoint(large){font-size: rem(16);}
+				&:after {
+					position: absolute;
+					transition: all .5s;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
+					width: 0%;
+					content: '.';
+					color: transparent;
+					background: $colorBlue;
+					height: rem(1);
+				}
+				&:focus,
+				&:hover {
+					color: $colorBlue;
+					&:after {
+						width: 100%;
+					}
+					
+				}
+			}
+			&.current-menu-item{
+				& a{
+							color: $colorBlue;
+					&:after {
+						width: 100%;
+					}
+				}
+			} 
+		}
+		
+	}
+	& .login_form {
+		& p,
+		& .login_sbmt {
+			display: inline-flex;
+			@include align-items(center);
+			vertical-align: top;
+		}
+	}
+	&.sticky {
+		padding: rem(12) 0;
+		
+		& .navbar-brand {
+			width: rem(200);
+			@include breakpoint(large){width:rem(165);}
+		}
+		& .form_control {
+			height: rem(40);
+			@include breakpoint(large){height: rem(37);}
+		}
+		& .login_sbmt {
+			& .login {
+				font-size: rem(20);
+				@include breakpoint(large){font-size: rem(18);}
+			}
+		}
+	}
+	& .navbar-brand{
+		@include breakpoint(large){	width:rem(174);}
+	
+		
+	}
+}
+
+.form_control {
+	color: $colorGrey;
+	font-size: rem(16);
+	font-weight: 300;
+	font-family: 'Proxima Nova Lt';
+	padding: 0 rem(16);
+	width: rem(230);
+	height: rem(49);
+	border: rem(1) solid #d1d1d1;
+	@include border-radius(rem(5));
+	margin-right: rem(9);
+	@include breakpoint(large){height: rem(37);font-size: rem(15);}
+	&:focus {
+		border-color: $colorBlue;
+	}
+}
+
+.login_sbmt {
+	background: $colorBlue;
+	@include border-radius(rem(5));
+	overflow: hidden;
+	z-index: 1;
+	& .login {
+		border: 0;
+		color: $colorWhite;
+		text-align: $textCenter;
+		font-size: rem(26);
+		font-family: 'Proxima Nova Lt';
+		font-weight: 600;
+		text-transform: $textCapt;
+		min-width: rem(103);
+		cursor: pointer;
+		padding: rem(5) 0;
+		background: transparent;
+		z-index: 1;
+		@include breakpoint(large){font-size: rem(18);}
+	}
+}
+
+.eff-5 {
+	position: $positionRelative;
+	&:after {
+		width: 100%;
+		height: 100%;
+		left: rem(-140);
+		top: rem(-50);
+		background: transparent;
+		position: absolute;
+		transition: all .5s ease;
+		z-index: 0;
+		content: '';
+	}
+	&:hover:after,
+	&:focus:after {
+		left: 0;
+		top: 0;
+		background: $colorDarkBlue;
+	}
+}
+
+.login_sbmt:hover .eff-5 {
+	left: 0;
+	top: 0;
+}
+
+
+/**** Banner Section *****/
+
+.banner {
+	width: 100%;
+	padding: rem(126) 0;
+	margin-top: rem(106);
+	background: $colorBlue;overflow: hidden;
+	@include breakpoint(large){margin-top: rem(89);padding: rem(70) 0;}
+	& .row {
+		@include align-items(center);
+	}
+	& h1 {
+		font-size: rem(77);
+		color: $colorWhite;
+		font-family: 'Proxima Nova Lt';
+		font-weight: 300;
+		padding-right: rem(85);
+		line-height: rem(85);
+		margin-bottom: rem(36);
+		@include breakpoint(large){padding-right: 0;font-size: rem(65);line-height: rem(75);margin-bottom: rem(30);}
+	}
+}
+
+.started_btn {
+	border: rem(1) solid #ffffff;
+	color: $colorWhite;
+	text-align: $textCenter;
+	font-size: rem(26);
+	font-family: 'Proxima Nova Lt';
+	font-weight: 600;
+	text-transform: $textCapt;
+	min-width: rem(210);
+	cursor: pointer;
+	padding: rem(8) rem(45);
+	display: inline-flex;
+	background: transparent;
+	@include border-radius(rem(5));
+	overflow: hidden;
+	z-index: 1;
+	@include justify-content(center);
+	@include breakpoint(large){
+		font-size: rem(21); 
+		padding: rem(8) rem(30);
+	}
+	&.eff-5 {
+		&:after {
+			z-index: -1;
+		}
+	}
+	&:focus,
+	&:hover {
+		border-color: $colorDarkBlue;
+		color: $colorWhite;
+		
+	}
+}
+
+
+/**** Story Section ****/
+
+.story_sec {
+	& .row {
+		padding-top: rem(117);
+		padding-bottom: rem(117);
+		background: $colorWhite;
+		@include align-items(center);
+		@include breakpoint(large){padding-top: rem(70);padding-bottom: rem(70);}
+		&:nth-child(odd) {
+			@include flex-direction(row-reverse);
+			background: $colorDarkGrey;
+			position: $positionRelative;
+			&:before,
+			&:after {
+				position: $positionAbsolute;
+				left: rem(-10000);
+				top: 0;
+				width: rem(10000);
+				content: '';
+				height: 100%;
+				background: $colorDarkGrey;
+				z-index: 1;
+			}
+			&:after {
+				left: auto;
+				right: rem(-10000);
+			}
+		}
+	}
+	& h2 {
+		font-size: rem(60);
+		color: $colorLightBlack;
+		font-family: 'Proxima Nova Lt';
+		font-weight: 300;
+		line-height: rem(70);
+		margin-bottom: rem(15);
+		@include breakpoint(large){font-size: rem(45);line-height: rem(50);}
+	}
+	& p {
+		color: $colorMedBlack;
+		font-family: 'Proxima Nova Lt';
+		font-weight: 300;
+		font-size: rem(27);
+		@include breakpoint(large){font-size: rem(23);}
+	}
+	& .started_btn {
+		color: $colorBlue;
+		border-color: $colorBlue;
+		border-width: rem(2);
+		margin-top: rem(29);
+		
+		&:hover,
+		&:focus {
+			color: $colorWhite;
+			border-color: $colorDarkBlue;
+		}
+	}
+	& figure {
+		text-align: center;
+	}
+}
+
+
+/**** Testimonial Section ****/
+
+.testimonial_sec {
+	width: 100%;
+	background: $colorDarkGrey;
+	padding: rem(77) 0;
+	@include breakpoint(large){padding: rem(70) 0;}
+	& .testi_bx {
+		width: 78%;
+		margin: auto;
+		& figure {
+			@include border-radius(50%);
+			width: rem(145);
+			height: rem(145);
+			overflow: hidden;
+			border: rem(9) solid #dedede;
+			display: inline-block;
+			@include breakpoint(large){width: rem(130);height: rem(130);border-width:rem(7);}
+		}
+		& p {
+			font-size: rem(27);
+			color: $colorMedBlack;
+			font-family: 'Proxima Nova Lt';
+			font-weight: 300;
+			@include breakpoint(large){font-size: rem(23);}
+		}
+		& h4 {
+			font-size: rem(30);
+			color: $colorMedBlack;
+			font-family: 'Proxima Nova Lt';
+			font-weight: 300;
+			margin-top: rem(20);
+			@include breakpoint(large){font-size: rem(23);margin-top: rem(15);}
+		}
+	}
+}
+
+.story_sec_odd {
+	background: $colorDarkGrey;
+	& .row {
+		background: $colorDarkGrey;
+		&:nth-child(odd) {
+			background: $colorWhite;
+			&:before,
+			&:after {
+				background: $colorWhite;
+			}
+		}
+	}
+}
+
+.testimonial_sec_odd {
+	@extend .testimonial_sec;
+	-webkit-animation: market-background 30.6s linear infinite;
+	animation: market-background 30.6s linear infinite;
+	position: relative;
+	background-size: cover !important;
+	background-position: center !important;
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.7);
+		content: '';
+	}
+	& .testi_bx {
+		& p,
+		& h4 {
+			color: $colorWhite;
+		}
+	}
+	& .owl-prev,
+	& .owl-next {
+		opacity: 0.5;
+		&:before {
+			color: $colorWhite !important;
+		}
+	}
+}
+
+footer {
+	background: $colorDarkBlack;
+	width: 100%;
+	padding: rem(28) 0;
+	@include breakpoint(large){padding: rem(15) 0;}
+	& p {
+		font-size: rem(15);
+		color: $colorMedGrey;
+		font-family: 'Proxima Nova Lt';
+		font-weight: 300;
+		& a {
+			color: $colorDarkBlue;
+			&:hover,
+			&:focus {
+				color: $colorWhite;
+			}
+		}
+	}
+	& .ftr_nav {
+		& li {
+			color: $colorWhite;
+			display: inline-block;
+			font-family: 'Proxima Nova Lt';
+			font-weight: 300;
+			font-size: rem(18);
+			margin-right: rem(39);
+			@include breakpoint(large){font-size: rem(16);}
+			&:last-child {
+				margin-right: 0;
+			}
+			& a {
+				color: $colorWhite;
+				&:hover,
+				&:focus {
+					color: $colorBlue;
+				}
+			}
+			&.current-menu-item{
+				& a{color: $colorBlue;}
+			}
+		}
+	}
+	& .ftr_social {
+		& ul {
+			line-height: 0;
+			& li {
+				list-style: none;
+				color: $colorBlue;
+				font-size: rem(21);
+				display: inline-block;
+				margin-right: rem(24);
+				@include breakpoint(large){font-size: rem(16);margin-right: rem(15);}
+				&:last-child {
+					margin-right: 0;
+				}
+				& a {
+					&:hover,
+					&:focus {
+						color: $colorWhite;
+					}
+				}
+			}
+		}
+	}
+	& .ftr_main {
+		@include justify-content(space-between);
+		@include flexbox;
+		@include align-items(center);
+	}
+}
+/**** About Page ****/
+.about_page{
+	width: 100%;padding: rem(97) 0;background: $colorDarkGrey;margin-top: rem(106);text-align: center;
+	@include breakpoint(large){padding: rem(70) 0;margin-top: rem(89);}
+	& h2{margin-bottom: rem(35);}
+	& p + p{margin-top: rem(40);
+		@include breakpoint(large){margin-top: rem(30);}
+	}
+	& figure{margin-top: rem(65);}
+}
+.core_feature{
+	padding: rem(110) 0;width: 100%;background: $colorWhite;text-align: center;
+	@include breakpoint(large){padding: rem(70) 0;}
+	& h2{margin-bottom: rem(80);
+		@include breakpoint(large){margin-bottom: rem(50);}
+	}
+	& .feature_bx{margin-top: rem(100);
+		&:nth-child(1),&:nth-child(2),&:nth-child(3){margin-top: 0;}
+		
+		
+	& figure{
+		width: rem(80);height: rem(80);display: inline-block;margin-bottom: rem(30);
+		@include breakpoint(large){width: rem(60);height: rem(60);}
+		& svg{display: inline-block;width: 100%;height: 100%;
+			& path {
+				color: $colorMedBlue;
+			}
+		}
+		
+	}
+		&:nth-child(4){
+			& figure{width: rem(197);}
+		}
+		&:nth-child(5){
+			& figure{width:rem(100);}
+		}
+		&:hover, &:focus{
+			& svg path
+				{
+				fill:red !important;
+				}
+			
+			
+		}
+	}
+}
+/**** How It Works Page ****/
+.how_works_page{	margin-top: rem(106);width: 100%;background: $colorBlue;padding: rem(96) 0;
+	
+	@include breakpoint(large){margin-top: rem(89);padding: rem(70) 0;}
+	& .row{@include flex-direction(row-reverse);
+		@include align-items(center);
+		& figure{text-align: center;}
+	}
+	& p, & h2{color:$colorWhite;}
+}
+.how_feature{
+	background: $colorWhite;
+	& .feature_bx{padding: rem(90) 0;position: $positionRelative;
+		@include breakpoint(large){padding: rem(60) 0;}
+		& h2{font-size: rem(60);color: $colorLightBlack;font-family: 'Proxima Nova Lt';font-weight: 300;
+			@include breakpoint(large){font-size: rem(45);}
+		}
+		& p{font-family: 'Proxima Nova Lt';font-weight: 300;font-size: rem(27);color: $colorMedBlack;margin-bottom: rem(42);
+			@include breakpoint(large){font-size: rem(23);margin-bottom: rem(30);}
+			
+			&:last-child{margin-bottom: 0;}
+		}
+	
+	&:nth-child(even){background: $colorDarkGrey;
+		&:before,&:after{
+			background: $colorDarkGrey;left: 0;position: $positionAbsolute;top:0;content:'';    width: rem(10000); left: rem(-10000);  height: 100%;
+		}
+		&:after{left: auto;right: rem(-10000);}
+		}
+	}
+}
+.yearloom_sectn{
+	padding: rem(120) 0;background: $colorBlue;
+		@include breakpoint(large) {
+	padding: rem(70) 0;
+	}
+	& h2{font-size: rem(60);color: $colorWhite;font-family: 'Proxima Nova Lt';font-weight: 300;text-align: center;
+	@include breakpoint(large){font-size: rem(45);}
+	}
+	& .loom_bx{text-align: center;margin-top: rem(60);overflow: hidden;
+			@include breakpoint(large) {
+		margin-top: rem(40);
+	}
+		& h4{
+			font-size: rem(30);color: $colorWhite;font-family: 'Proxima Nova Lt';font-weight: 600;margin-bottom: rem(10);
+			@include breakpoint(large){font-size: rem(23);}
+		}
+		& p{font-family: 'Proxima Nova Lt';font-weight: 300;font-size: rem(27);color: $colorWhite;line-height: rem(40);
+			@include breakpoint(large) {
+		font-size: rem(23);
+	}
+		}
+		& .loom_bx_innr{margin-top: rem(87);
+				@include breakpoint(large) {
+		margin-top: rem(50);
+	}
+			&:first-child,&:nth-child(2),&:nth-child(3){margin-top: 0;}
+		}
+	}
+}
+.modal-dialog{width: rem(721);max-width: 100%;text-align: center;
+& .modal-content{border: 0;padding: rem(30);
+	& .modal-header{padding: 0;border:0;
+		& h2{font-size: rem(40);font-weight: 300;font-family: 'Proxima Nova Lt';text-transform: capitalize;color: $colorLightBlack;text-align: center;width: 100%;
+			@include breakpoint(large) {font-size: rem(30);}
+		}
+		& .close{ margin: 0; padding: 0;right:rem(-9); top: rem(-14); position: $positionAbsolute;background: $colorDarkBlue;  opacity: 1; @include border-radius(50%); width: rem(30); height: rem(30); display: inline-block; color: $colorWhite;
+			&:hover,&:focus{
+				background: $colorBlue;
+			}
+		}
+	}
+	& .modal-body{padding: 0;margin-top: rem(15);}
+	
+	}
+}
+#signup_modal{
+	& form{margin-bottom: rem(30);
+		@include breakpoint(large) {margin-bottom: 0;}
+		& p{text-align: left;}
+			& label{font-family: 'Proxima Nova Rg';font-size: rem(24);color: #000;font-weight: normal;
+				@include breakpoint(large) {font-size: rem(20);}
+		}
+		
+		& .form_control{height: rem(53);
+		
+			@include breakpoint(large) {height: rem(45);}
+				
+			}
+		
+		& .separtor_sctn{margin-top: rem(46);border-top: rem(1) solid #d1d1d1;position: $positionRelative;
+			@include breakpoint(large) {margin-top: rem(35);}
+	& label{font-size:rem(18);font-family: 'Proxima Nova Lt';font-weight: 300;color: $colorLblack;margin: 0 0 0 rem(-25);background: $colorWhite;padding: 0 rem(17);@include position-center;}
+}
+}
+}
+.wdth_full{text-align: left;
+	@include justify-content(space-between);
+		@include flexbox;
+		@include align-items(center);margin-bottom: rem(20);
+	& p{
+		width: 48%;
+	
+	& .form_control{
+		margin: 0;width: 100%;    background: transparent;
+	}
+	}
+}
+.wdth_med{text-align: left;
+	& label{font-size: rem(22);margin-bottom: rem(10);}
+}
+ .loader_btn
+{
+	&.started_btn{
+		    color:$colorBlue;
+    border-color: $colorBlue;border-width: rem(2);font-size: rem(22);min-width: rem(190);padding: 0;margin-top: rem(28);
+		@include breakpoint(large) {font-size: rem(17);margin-top: rem(15);}
+		& .sbmt_btn{cursor: pointer; color:$colorBlue;padding: rem(8);width: 100%;border: 0;background: transparent;font-weight: 600;	font-family: 'Proxima Nova Lt';letter-spacing: rem(1);
+			&:hover,&:focus{color: $colorWhite;}
+		}
+		
+	}
+}
+.login_selection{margin-top: rem(40);@include justify-content(space-between);
+	@include breakpoint(large) {margin-top: rem(30);}
+		@include flexbox;
+	
+	& a{
+		background: $facebookBg;color: $colorWhite;font-size: rem(18);border: rem(1) solid #d1d1d1;@include border-radius(rem(5));padding: rem(8) rem(30);width: 48%;text-align: left;
+		@include breakpoint(large) {font-size: rem(16);}
+		& span{
+			    width: rem(35);height: rem(35);@include border-radius(50%);display: inline-block;@include box-shadow( 0 rem(1) rem(31) rem(-8) #000);line-height:rem(35);margin-right: rem(30);text-align: center;
+		}
+		+a{background: $gmailBg;}
+		&:hover,&:focus{background:$colorDarkBlue;}
+	}
+	
+}
+
+
+@include breakpoint(x-large) {
+	.container {
+		max-width: 1470px;
+	}
+}
+
